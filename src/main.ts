@@ -1,5 +1,5 @@
 import './style.css';
-import { initGame, resetGame, gameState } from './state';
+import { initGame, resetGame } from './state';
 import { mountConfigScreen } from './screens/configScreen';
 import { mountGameScreen } from './screens/gameScreen';
 import { mountWinnerScreen } from './screens/winnerScreen';

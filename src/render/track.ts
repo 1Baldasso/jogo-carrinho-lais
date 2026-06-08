@@ -14,7 +14,6 @@ export function renderTrack(state: GameState): string {
     const half  = Math.floor(visibleCount / 2);
     const rawStart = car.position - half;
     const start = Math.max(0, Math.min(rawStart, total - visibleCount));
-    const end   = start + visibleCount - 1;
 
     const cells = Array.from({ length: visibleCount }, (_, i) => {
       const space    = start + i;
@@ -36,9 +35,6 @@ export function renderTrack(state: GameState): string {
         ${occupied ? `<div class="car-svg-wrap">${carSvg(car.color, carWidth)}</div>` : ''}
       </div>`;
     }).join('');
-
-    // Progress indicator: position / finishLine
-    const pct = Math.round((car.position / config.finishLine) * 100);
 
     return `<div class="track-row track-lane" data-car-id="${car.id}" style="--car-color: ${car.color}">
       <div class="track-cell track-cell--label">

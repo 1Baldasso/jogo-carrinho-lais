@@ -252,7 +252,7 @@ export function mountGameScreen(
 
     // Aguarda dois frames para o modal ser pintado antes de animar
     await new Promise<void>(resolve =>
-      requestAnimationFrame(() => requestAnimationFrame(resolve))
+      requestAnimationFrame(() => requestAnimationFrame(() => resolve()))
     );
 
     await spinWheel(idx);
